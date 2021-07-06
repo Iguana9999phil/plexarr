@@ -154,18 +154,18 @@ func main() {
 	}
 
 	// find and split duplicate items
-//	l.Debug().Msg("Checking for duplicates...")
+	l.Debug().Msg("Checking for duplicates...")
 
-//	splitSize := 0
-//	for _, lib := range plexItems {
-//		split, err := splitDuplicates(p, lib)
-//		if err != nil {
-//			log.Fatal().
-//				Err(err).
-//				Msg("Failed finding and splitting duplicate plex library items")
-//		}
-//		splitSize += split
-//	}
+	splitSize := 0
+	for _, lib := range plexItems {
+		split, err := splitDuplicates(p, lib)
+		if err != nil {
+			log.Fatal().
+				Err(err).
+				Msg("Failed finding and splitting duplicate plex library items")
+		}
+		splitSize += split
+	}
 
 	// refresh items (post-split)
 	if splitSize > 0 {
